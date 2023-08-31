@@ -47,8 +47,8 @@ function AddProducts(){
             <img class="rounded-t-lg" src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
           </div>
           <div class="p-5">
-          <h1>Hi</h1>
-          <p>₹ Hi</p>
+          <h1 className="font-bold text-lg">{e.itemsName}</h1>
+          <p className="font-bold">₹ {e.price}</p>
            <div className="flex justify-between flex-wrap">
             <div onClick={AddProduct}>
               <p class="inline-flex cursor-pointer items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >

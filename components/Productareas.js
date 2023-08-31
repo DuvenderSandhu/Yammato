@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 function Productareas(props) {
   const dispatch = useDispatch();
   let cart = useSelector(state => state.addcart)
+  let user = useSelector(state => state.user)
   const router=useRouter()
   function AddProduct(e) {
     dispatch(actionCreators.addCart(cart.push("Hi")));
@@ -27,7 +28,23 @@ function Productareas(props) {
           <div class="p-5">
           <h1>{e.itemsName}</h1>
           <p>₹ {e.price}</p>
-            <div onClick={AddProduct}>
+            <div onClick={()=>{
+if(user){
+  let data={
+  shopid:user,
+  productid:e._id,
+  price:e.price,
+  productname:e.itemsName,
+};
+            console.log(data);
+            dispatch(actionCreators.addCart(cart.push(data)));
+    dispatch(actionCreators.showSuccess(e.itemsName+" Added to Cart"))
+}
+else{
+  router.push('/login')
+}
+            
+            }}>
               <p class="inline-flex cursor-pointer items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
                 Add
 

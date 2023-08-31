@@ -23,12 +23,12 @@ const dispatch= useDispatch()
     e.preventDefault()
     if(token){
       
-      let data=await fetch('https://yammato.moviesmovies.repl.co/api/addproduct',{
+      let data=await fetch('https://yammato.moviesmovies.repl.co/api/partner/addproduct',{
     method:"POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({itemname:itemname,type:itemtype,price:price,qty:qty,ItemDesc:itemdesc,token:token})
+    body: JSON.stringify({itemname:itemname,type:itemtype,price:price,qty:qty,Itemdesc:itemdesc,token:token})
     })
     let response= await data.json()
     if(response.status!='404'){

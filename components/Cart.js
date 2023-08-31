@@ -22,9 +22,9 @@ function Carts(props) {
           return (<>
           <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 cursor-pointer">
             <IoMdRemoveCircleOutline className="absolute left-2/3 text-xl cursor-pointer" onClick={HandleRemove} />
-            <p className="font-bold text-lg text-justify">Product</p>
+            <p className="font-bold text-lg text-justify">{e.productname}</p>
             <p className="font-bold text-md">Price</p>
-            <p>1</p>
+            <p>₹ {e.price}</p>
 
           </li>
               
