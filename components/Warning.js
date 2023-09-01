@@ -6,7 +6,7 @@ function Warning(){
   
   setTimeout(()=>{
           dispatch(actionCreators.showWarning(""))
-  },1000)
+  },2000)
   return (
     <>
     <div id="toast-warning" class="flex absolute items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">

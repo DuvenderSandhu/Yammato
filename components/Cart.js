@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import actionCreators from '../state/index'
 import { IoMdRemoveCircleOutline } from 'react-icons/io'
 import { MdOutlineHourglassEmpty } from 'react-icons/md'
-
+import Link from "next/link"
 function Carts(props) {
   const dispatch= useDispatch()
   let cart = useSelector(state => state.addcart)
@@ -36,7 +36,7 @@ function Carts(props) {
         <h1 className="font-bold text-center text-lg my-2">Your Cart is Empty Kindly Add Some to Order</h1>
         <MdOutlineHourglassEmpty className="text-4xl text-center"/>
         </div>)}
-        {cart.length!=0?<p class=" cursor-pointer m-0 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Checkout</p>:""}
+        {cart.length!=0?<p class=" cursor-pointer m-0 items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" ><Link href="/order/checkout">Checkout</Link></p>:""}
         {/* <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 cursor-pointer">
           <IoMdRemoveCircleOutline className="absolute left-2/3 text-xl cursor-pointer"/>
           <p className="font-bold text-lg text-justify">Item Name</p>

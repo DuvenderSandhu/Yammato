@@ -6,7 +6,7 @@ function Success(){
   
   setTimeout(()=>{
           dispatch(actionCreators.showSuccess(""))
-  },1000)
+  },2000)
   return (
     <>
     

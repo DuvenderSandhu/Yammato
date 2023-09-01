@@ -35,12 +35,14 @@ if(user){
   productid:e._id,
   price:e.price,
   productname:e.itemsName,
+  productdesc:e.ItemDesc
 };
-            console.log(data);
             dispatch(actionCreators.addCart(cart.push(data)));
     dispatch(actionCreators.showSuccess(e.itemsName+" Added to Cart"))
 }
 else{
+    dispatch(actionCreators.showError("User can Only use Cart after Login"))
+  
   router.push('/login')
 }
             
