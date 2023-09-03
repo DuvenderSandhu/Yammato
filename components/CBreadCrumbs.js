@@ -1,9 +1,6 @@
 import Link from 'next/link'
 function breadcrumb(){
-  const crumbs={
-    home:"/partner/adminsection",
-    "New Product":"/partner/admin/registerproduct"
-  }
+
   return (
     <>
       

@@ -8,7 +8,12 @@ const OrderSchema= new Schema({
    },
   productid:{
     unique:true,
-    type:String
+    type:Array
+  },
+  paymentid:{
+  type:String,
+  unique:true,
+    required:true
   },
   price:{
     type:String
@@ -18,5 +23,6 @@ const OrderSchema= new Schema({
     type:String
   },
 })
+// {shopid:req.body.token,productid:req.body.productid,paymentid:req.body.paymentid,price:req.body.price,address:req.body.address}
 mongoose.models={}
 module.exports = OrderSchema

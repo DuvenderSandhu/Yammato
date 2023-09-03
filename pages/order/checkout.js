@@ -3,24 +3,44 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useState,useEffect } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+// import { loadStripe } from '@stripe/stripe-js';
 import Head from 'next/head'
+import actionCreators from '../../state/index'
 
 function Checkout(){
-  let stripe= Stripe('sk_test_tR3PYbcVNZZ796tH88S4VQ2u')
+
+// const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
   const router= useRouter()
-  const [subtotal,setsubtotal]=useState(0)
+  const [subtotal,setsubtotal]=useState(500)
+  const [products,setproducts]=useState([])
   const dispatch= useDispatch()
   let cart = useSelector(state => state.addcart)
   let user = useSelector(state => state.user)
+  
   console.log(cart)
+  const stripe= Stripe('sk_test_tR3PYbcVNZZ796tH88S4VQ2u')
 async function InitiatePayment(){
 
-const paymentIntent = await stripe.paymentIntents.create({
-  amount: 500,
+try{
+  let paymentIntent = await stripe.paymentIntents.create({
+  amount: subtotal,
   currency: 'gbp',
   payment_method: 'pm_card_us',
 });
-  console.log(paymentIntent)
+// dispatch(actionCreators.showSuccess("Payment of 500 Done Successfully"))
+  let data= {
+    productid:"",
+    paymentid:paymentIntent.id,
+    token:user,
+    price:`${subtotal}`
+  }
+  console.log(products)
+  console.log(paymentIntent.id)
+}
+  catch{
+dispatch(actionCreators.showError("Payment Failed"))
+    
+  }
 }
   return (
     <>
@@ -29,6 +49,8 @@ const paymentIntent = await stripe.paymentIntents.create({
   <div class="container px-5 py-5 mx-auto">
     <div class="flex flex-wrap -mx-4 -my-8 gap-2 justify-between">
       {cart.map((e,i)=>{
+      // products.push(e.productid)
+      // console.log(e.productid)
       return (
         <>
         <div class="py-4 px-2 lg:w-1/5 border ">
