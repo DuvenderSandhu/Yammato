@@ -1,1 +1,1 @@
-Problem: Send All Products in Array to API Productareas 
+Problem: Address Problem

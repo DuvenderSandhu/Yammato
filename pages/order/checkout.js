@@ -27,15 +27,23 @@ try{
   currency: 'gbp',
   payment_method: 'pm_card_us',
 });
-// dispatch(actionCreators.showSuccess("Payment of 500 Done Successfully"))
   let data= {
-    productid:"",
+    productid:cart.map((e)=>e.productid),
     paymentid:paymentIntent.id,
     token:user,
     price:`${subtotal}`
   }
-  console.log(products)
-  console.log(paymentIntent.id)
+  let result= await fetch('https://yammato.moviesmovies.repl.co/api/order/checkout',{
+     method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify(data)
+  })
+  let output= await result.json()
+dispatch(actionCreators.showSuccess("Payment of 500 Done Successfully"))
+  router.push('/order/updateaddress')
+  // console.log(output)
 }
   catch{
 dispatch(actionCreators.showError("Payment Failed"))

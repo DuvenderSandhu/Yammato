@@ -7,7 +7,6 @@ const OrderSchema= new Schema({
       type:String
    },
   productid:{
-    unique:true,
     type:Array
   },
   paymentid:{
@@ -19,7 +18,7 @@ const OrderSchema= new Schema({
     type:String
   },
   address:{
-    required:true,
+    required:false,
     type:String
   },
 })

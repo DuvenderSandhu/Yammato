@@ -36,8 +36,8 @@ if(user){
   price:e.price,
   productname:e.itemsName,
   productdesc:e.ItemDesc
-};
-            dispatch(actionCreators.addCart(cart.push(data)));
+};  
+  dispatch(actionCreators.addCart(cart.push(data)));
     dispatch(actionCreators.showSuccess(e.itemsName+" Added to Cart"))
 }
 else{

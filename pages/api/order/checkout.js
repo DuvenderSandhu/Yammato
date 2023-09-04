@@ -11,8 +11,9 @@ if(req.method==="POST"){
     let result= await Order.create({shopid:req.body.token,productid:req.body.productid,paymentid:req.body.paymentid,price:req.body.price,address:req.body.address})
     res.json(result)
   }
-  catch{
-    res.json({alert:"Order Couldn't be Completed Kindly Contact Customer Support"})
+  catch(e){
+    console.log(e)
+    res.json({alert:"Order Couldn't be Completed Kindly Contact Customer Support",error:e})
   }
   // res.json(result)
 }
