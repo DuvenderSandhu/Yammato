@@ -18,6 +18,10 @@ const CustomerSchema= new Schema({
     required:true,
     type:String
   },
+  address:{
+    type:String
+  },
+  
 })
 mongoose.models={}
 module.exports = CustomerSchema
