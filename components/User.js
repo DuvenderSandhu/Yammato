@@ -18,6 +18,7 @@ function User(props){
         </Link>
         <Link href="/login">
         <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 cursor-pointer">
+          <p className="font-bold text-md text-justify my-4"><Link href="/my_orders">My Orders</Link></p>
           <p className="font-bold text-md text-justify" onClick={HandleLogOut}>Logout</p>
         </li>
         </Link>

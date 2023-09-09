@@ -7,7 +7,6 @@ import actionCreators from '../state/index'
 function UpdateAddress(props){
   const user= useSelector(state => state.user)
   
-     
   // const data = await res.json()
   //   console.log(data)
 
@@ -63,11 +62,9 @@ const [pin, setPin] = useState("");
   
   async function ClickBtn(e){
     e.preventDefault()
-    
-  // console.log(JSON.stringify(sendData))
-  }
-  async function GetData(){
+    // console.log("Hello")
     let sendData={
+    building:building,
     area:area,
     landmark:landmark,
     city:city,
@@ -82,18 +79,46 @@ const [pin, setPin] = useState("");
     body: JSON.stringify({token:user,data:sendData})
   })
     let data=await res.json()
+    console.log(data)
+    if(data.status==='ok'){
+        dispatch(actionCreators.showSuccess(data.alert))
+        dispatch(actionCreators.addCart([]))
+        router.push('/my_orders')
+    }
+    else{
+        dispatch(actionCreators.showError(data.alert))
+      
+    }
+    
+  // console.log(JSON.stringify(sendData))
+  }
+  async function GetData(){
+    
+    const res =  await fetch(`https://yammato.moviesmovies.repl.co/api/order/address`,{
+    method:"POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({token:user})
+  })
+    let data=await res.json()
     console.log(data.address)
     if(data.status==='ok' && data.address!=undefined){
-      let result= JSON.parse(data.address)
-      console.log(result)
-      setBuilding(result.building)
-      setArea(result.area)
-      setLandmark(result.landmark)
-      setCity(result.city)
-      setState(result.state)
-      setPin(result.pincode)
+      try{
+        let result= JSON.parse(data.address)
+        setBuilding(result.building)
+        setArea(result.area)
+        setLandmark(result.landmark)
+        setCity(result.city)
+        setState(result.state)
+        setPin(result.pin)
+        
+      }
+      catch{
+        dispatch(actionCreators.showWarning("Some Error Occured During Your Address"))
+      }
     }
-    dispatch(actionCreators.showSuccess(data.alert))
+    
   }
 
   // GetData()

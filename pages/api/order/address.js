@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       let ok = await jwt.verify(req.body.token, process.env.JWT_TOKEN)
     let customers=await Customer.find({mobile:ok.mobile}).select(['-mobile','-email','-password'])
     if(customers.length!=0){
-    res.json({address:customers[0].address})
+    res.json({status:'ok',address:customers[0].address})
       
     }
     }

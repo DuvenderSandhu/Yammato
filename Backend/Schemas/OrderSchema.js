@@ -12,16 +12,28 @@ const OrderSchema= new Schema({
   paymentid:{
   type:String,
   unique:true,
-    required:true
+  required:true
   },
   price:{
     type:String
+  },
+  user:{
+    type:String,
+    required:true
   },
   address:{
     required:false,
     type:String
   },
+  status:{
+    type:String,
+    default:"Pending"
+  },
+  expectData:{
+    type:String,
+    default:""
+  }
 })
-// {shopid:req.body.token,productid:req.body.productid,paymentid:req.body.paymentid,price:req.body.price,address:req.body.address}
+
 mongoose.models={}
 module.exports = OrderSchema

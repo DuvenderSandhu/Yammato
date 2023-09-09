@@ -1,6 +1,7 @@
 import connectToMongo from '../../../Backend/Middlewares/connectToMongo'
 import CustomerSchema from '../../../Backend/Schemas/CustomerSchema'
 import mongoose from 'mongoose'
+
 let jwt = require('jsonwebtoken');
 
 const Customer = mongoose.model('Customer', CustomerSchema)
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
     let customers= await Customer.find({mobile:result.mobile})
     if(customers.length!=0){
       let newUser= await Customer.findOneAndUpdate({mobile:result.mobile},{address:JSON.stringify(req.body.data)})
-      res.json({status:'ok',alert:'Address Updated Successfully ',newUser})
+      res.json({status:'ok',alert:'Items has been Ordered Successfully '})
     }
     else{
       res.json({status:'404',alert:"Address Couldn't be Updated "})

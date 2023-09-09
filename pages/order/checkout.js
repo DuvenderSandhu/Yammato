@@ -31,6 +31,7 @@ try{
     productid:cart.map((e)=>e.productid),
     paymentid:paymentIntent.id,
     token:user,
+    shopid:"SHopid",
     price:`${subtotal}`
   }
   let result= await fetch('https://yammato.moviesmovies.repl.co/api/order/checkout',{
@@ -41,6 +42,7 @@ try{
       body:JSON.stringify(data)
   })
   let output= await result.json()
+  console.log(output)
 dispatch(actionCreators.showSuccess("Payment of 500 Done Successfully"))
   router.push('/order/updateaddress')
   // console.log(output)
