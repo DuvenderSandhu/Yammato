@@ -29,7 +29,7 @@ function breadcrumb(){
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
         </svg>
         
-        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"><Link href="/partner/adminsection">View Your Orders</Link></span>
+        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"><Link href="/partner/admin/view-orders">View Your Orders</Link></span>
       </div>
     </li>
   </ol>

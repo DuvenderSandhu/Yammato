@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const OrderSchema= new Schema({
    shopid:{
      required:true,
-      type:String
+      type:Array
    },
   productid:{
     type:Array

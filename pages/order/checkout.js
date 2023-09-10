@@ -31,7 +31,7 @@ try{
     productid:cart.map((e)=>e.productid),
     paymentid:paymentIntent.id,
     token:user,
-    shopid:"SHopid",
+    shopid:cart.map((e)=>e.shopid),
     price:`${subtotal}`
   }
   let result= await fetch('https://yammato.moviesmovies.repl.co/api/order/checkout',{
