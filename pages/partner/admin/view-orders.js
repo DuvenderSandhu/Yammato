@@ -1,9 +1,10 @@
 import Breadcrumb from '../../../components/Breadcrumb'
 import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import {useRouter} from 'next/router'
 function View(){
   const [data,setData]=useState([])
+  const router= useRouter()
   let user = useSelector(state => state.user)
   async function getData(){
     let res=await fetch('https://yammato.moviesmovies.repl.co/api/partner/orders/',{
@@ -35,8 +36,10 @@ function View(){
           <p className="font-medium">Contains {e.productid.length} Products</p>
           <p className="text-red-900 font-bold"> {e.status}</p>
             <div >
-              <p class="inline-flex cursor-pointer items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
-                Add
+              <p class="inline-flex cursor-pointer items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={()=>{
+            router.push(`/partner/admin/view-orders/${e._id}`)
+              }} >
+                Update
 
               </p></div>
           </div>

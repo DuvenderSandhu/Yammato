@@ -15,6 +15,8 @@ if(req.method==="POST"){
   let product= await Food.find({_id:req.body.productid})
     
     let result= await Order.create({shopid:product.map((e)=>e.shopID),productid:req.body.productid,paymentid:req.body.paymentid,price:req.body.price,address:req.body.address,user:token.mobile})
+    res.json({alert:"Order Done"})
+    
   }
   catch(e){
     console.log(e)
