@@ -8,7 +8,10 @@ const dispatch=useDispatch()
 const [shopid, setShopid] = useState("");
 const [password, setPassword] = useState("");
 const router=useRouter()
-  
+const user= useSelector(state=>state.user)
+  if(user!=""){
+    router.push('/partner/adminsection')
+  }
   async function ClickBtn(e){
   e.preventDefault()
   let response = await fetch(`https://yammato.moviesmovies.repl.co/api/partner/login`,{
