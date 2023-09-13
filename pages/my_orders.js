@@ -36,22 +36,12 @@ function MyOrder(){
           </div>
           <div class="p-5">
           <h1>{e.itemsName}</h1>
-            <div onClick={()=>{
-if(user){
-    dispatch(actionCreators.showSuccess("Good To Go"))
-   
-}
-else{
-    dispatch(actionCreators.showError("User can Only use Cart after Login"))
-  
-  router.push('/login')
-}
-            
-            }}>
-              <p class="inline-flex cursor-pointer items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
-                Get Info
-
-              </p></div>
+            <div >
+              <h1 className="font-bold text-lg">{e.itemsName}</h1>
+          <p className="font-bold">#{e._id}</p>
+          <p className="text-red-900 font-bold">Order status: {e.status}</p>
+              {e.status==="Accept"?<p className="text-black font-medium">You Will Receive it Soon</p>:""}
+              </div>
           </div>
         </div>
         )

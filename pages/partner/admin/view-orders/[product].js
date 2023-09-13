@@ -2,13 +2,15 @@ import { useRouter } from 'next/router'
 import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Breadcrumb from '../../../../components/Breadcrumb'
-
+import actionCreators from '../../../state/index'
 function Product(){
+  const dispatch=useDispatch()
   const router=useRouter()
   const product= router.query.product
   const user= useSelector(state=>state.user)
   const [result,setResult]=useState([])
   const [status,setStatus]=useState("")
+  console.log("user "+user)
   async function HandleStatus(item,status){
     let data=await fetch('https://yammato.moviesmovies.repl.co/api/partner/changestatus',{
     method:"POST",
@@ -36,7 +38,12 @@ function Product(){
     body: JSON.stringify({orderid:product,token:user})
   })
   const data = await res.json()
-    setResult(data)
+  if(data.status==="ok"){
+  dispatch(actionCreators.showSuccess(data.alert))
+  }
+  else{
+    
+  }
   }
   useEffect(()=>{
     console.log(product)
@@ -47,7 +54,7 @@ function Product(){
     <>
       <Breadcrumb/>
 
-            <h1 className="font-bold text-2xl m-8 text-center">OrderNo.: {product}</h1>
+            <h1 className="font-bold text-2xl m-8 text-center">#{product}</h1>
       <div className=" flex gap-4">
 
       {result!=0?result.map((e)=>{
