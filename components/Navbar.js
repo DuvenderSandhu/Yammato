@@ -51,6 +51,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
+        
         <div className="flex gap-4">
           <div class="relative w-10 h-10 flex justify-center items-center overflow-hidden cursor-pointer bg-gray-100 rounded-full dark:bg-gray-600 text-xl text-gray-400" onClick={() => {
             if (loged2 === "hidden") {

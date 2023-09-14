@@ -6,19 +6,16 @@ function Footer(){
 <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
-                <img src="/logo.png" class="h-8 mr-3" alt="Yummato Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Yummato</span>
-            </a>
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><Link href="/">Yummato</Link></span>
             <ul class="flex flex-wrap gap-4 items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
                     <Link href="/" class="mr-4 hover:underline md:mr-6 ">Home</Link>
                 </li>
                 <li>
-                    <Link href="/" class="mr-4 hover:underline md:mr-6">Partners Shops</Link>
+                    <Link href="/partner-shops" class="mr-4 hover:underline md:mr-6">Partners Shops</Link>
                 </li>
                 <li>
-                    <Link href="/" class="mr-4 hover:underline md:mr-6 ">Shop Partnership</Link>
+                    <Link href="/partner/login" class="mr-4 hover:underline md:mr-6 ">Shop Partnership</Link>
                 </li>
                 <li>
                     <Link href="/" class="hover:underline">Contact</Link>

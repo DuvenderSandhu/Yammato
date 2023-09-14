@@ -2,7 +2,7 @@ function Siderbar() {
   return (
     <>
     <h1 className="font-bold text-2xl m-8 text-center">Explore by Categories</h1>
-    <div className="flex gap-4">
+    <div className="flex gap-4 flex-wrap justify-center md:justify-none">
     
 <div class="w-[250px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
