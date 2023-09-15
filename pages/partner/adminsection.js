@@ -9,7 +9,7 @@ function AddProducts(){
   const router=useRouter()
   
   const dispatch= useDispatch()
-  const [products, setProducts] = useState("");
+  const [products, setProducts] = useState([]);
   let user = useSelector(state => state.user)
   async function FetchData(){
     let data=await fetch('https://yammato.moviesmovies.repl.co/api/getproducts',{
@@ -21,15 +21,10 @@ function AddProducts(){
     })
     let response= await data.json()
     console.log(user)
-    setProducts(response)
+    await setProducts(response)
   }
   useEffect( ()=>{
-     if(user){
-       FetchData().then(data=>console.log("DOne")).catch(e=>console.log("Error"))
-     }
-    else{
-      router.push('/partner/login')
-    }
+       // user?FetchData().then():dispatch(actionCreators.showError("Invalid Login"))
   },[])
   function AddProduct(){
     
