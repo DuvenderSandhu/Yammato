@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Breadcrumb from '../../../../components/Breadcrumb'
-import actionCreators from '../../../state/index'
+import actionCreators from '../../../../state/index'
 function Product(){
   const dispatch=useDispatch()
   const router=useRouter()

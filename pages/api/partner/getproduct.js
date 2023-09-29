@@ -26,6 +26,7 @@ if (req.method === 'POST') {
   details.push(products[0])    
   }))
   console.log(details)
+  console.log("Hi")
   res.send(details)
 }
 else{

@@ -5,18 +5,18 @@ import ShopSchema from '../Backend/Schemas/ShopSchema'
 const Shop = mongoose.model('Shop', ShopSchema)
 
 function Shops(props) {
-  
+  console.log(props)
   return (
     <>
-    <Shopareas data={props.data}/>
+      <Shopareas data={props.data} />
     </>
   )
 }
 export async function getServerSideProps() {
   // Fetch data from external API
   let response = await fetch(`https://yammato.moviesmovies.repl.co/api/orders`)
-  let data= await response.json()
-  return { props: { data :data} }
+  let data = await response.json()
+  return { props: { data: data } }
 }
 
 export default Shops
