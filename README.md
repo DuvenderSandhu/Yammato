@@ -1,18 +1,54 @@
-# Next.js + TailwindCSS
+# Yammato 
+ 
+Yummato allows shop owners to easily register their stores once they've logged in or signed up. Users can then explore and order from local shops seamlessly. 
+## Tech Stack
 
-Next.js Documentation: https://nextjs.org/docs<br>
-TailwindCSS Documentation: https://tailwindcss.com/docs/utility-first
+**Client:** Nextjs, Tailwind
 
-Next.js: The React Framework
-for Production.
-Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
+**Server:** Nextjs API,JWT, Bcrypt, MongoDB, Fake Payment
 
-Tailwind is a utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.
+**Database** MongoDB
 
-Example:
-```html
-<div className="bg-slate-800 text-xl p-2 border border-gray-100">
-  <p className="m-2 text-white">TailwindCSS and Next.js</p>
-  <a href="..." className="text-red-300">Visit the documentation</a>
-</div>
+## Run Locally
+
+Clone the project 
+
+```bash
+ git clone "https://github.com/DuvenderSandhu/Yammato"
 ```
+
+Go to the project directory
+
+```bash
+  cd Yammato
+```
+
+Install dependencies
+
+```bash
+  npm install bcryptjs,jsonwebtoken,mongoose,nextjs-progressbar,postcss,react,react-dom,react-icons,redux,redux-thunk,stripe,tailwindcss,typescript,postcss,next,eslint-config-next,eslint,autoprefixer,react-redux
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+## Screenshots
+![First Page](public/Screenshot%20(10)1.png)
+
+![First Page](public/Screenshot%20(13)1.png)
+
+![First Page](public/Screenshot%20(15)1.png)
+
+![First Page](public/Screenshot%20(16)1.png)
+
+![First Page](public/Screenshot%20(18)1.png)
+
+![First Page](public/Screenshot%20(17)1.png)
+
+
+## Feedback
+
+If you have any feedback, please feel free to talk duvendersandhu@gmail.com
