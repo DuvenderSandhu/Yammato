@@ -5,7 +5,7 @@ Yummato allows shop owners to easily register their stores once they've logged i
 
 **Client:** Nextjs, Tailwind
 
-**Server:** Nextjs API,JWT, Bcrypt, MongoDB, Fake Payment
+**Server:** Nextjs API,JWT, Bcrypt, MongoDB, Stripe(Fake Payment)
 
 **Database** MongoDB
 
