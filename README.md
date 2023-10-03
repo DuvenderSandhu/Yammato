@@ -36,19 +36,19 @@ Start the server
 ```
 
 ## Screenshots
-![First Page](public/Screenshot%20(10)1.png)
+![First Page](1.png)
 
-![First Page](public/Screenshot%20(13)1.png)
+![First Page](2.png)
 
-![First Page](public/Screenshot%20(15)1.png)
+![First Page](3.png)
 
-![First Page](public/Screenshot%20(16)1.png)
+![First Page](4.png)
 
-![First Page](public/Screenshot%20(18)1.png)
+![First Page](5.png)
 
-![First Page](public/Screenshot%20(17)1.png)
+![First Page](6.png)
 
-
+![First Page](7.png)
 ## Feedback
 
 If you have any feedback, please feel free to talk duvendersandhu@gmail.com
