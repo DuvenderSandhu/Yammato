@@ -13,7 +13,7 @@ export default async function handler(req, res) {
  }
     catch(e){
       console.log(e)
-  res.json({status:"404",alert:"Something Went Wrong",error:e})
+  res.json({status:"404",alert:"Something Went Wrong Due to Server Error",error:e})
       
     }
   }

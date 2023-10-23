@@ -21,13 +21,14 @@ function Shopsignup(){
   let data= await response.json()
     if(data.status==="ok"){
   dispatch(actionCreators.showSuccess(data.alert))
+   router.push("/partner/login")
+      console.log(data)
     }
     else{
     dispatch(actionCreators.showError(data.alert))
-      
+      console.log(data)
     }
     
-   router.push("/partner/login")
   }
   else{
     dispatch(actionCreators.showError("Some Values are Empty"))

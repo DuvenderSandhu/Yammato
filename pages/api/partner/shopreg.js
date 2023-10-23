@@ -27,11 +27,10 @@ try{
     
 }
   catch(e){
-    res.json({status:"error",alert:"Some Error Occured",e})
+    res.json({status:"404",alert:"Couldn't Process Due to Server Error"})
     
     }
 }
 else if (req.method === 'GET') {
 res.send("GET Method")
-}
-}
+}}
